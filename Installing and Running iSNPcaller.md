@@ -36,4 +36,4 @@ You will be prompted for the name of a new project (should not match any file/fo
 ```bash
 perl iSNPcaller.pl myProject
 ```
-confirm the projectname when prompted.
+confirm the project name when prompted.
