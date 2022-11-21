@@ -28,6 +28,7 @@
 
 a. If this is the first run for a given project, initiate a project as follows:
 ```bash
+cd iSNPcaller
 perl iSNPcaller.pl
 ```
 You will be prompted for the name of a new project (should not match any file/folder in the current working directory). Type the name of the project, hit return and confirm when prompted).
