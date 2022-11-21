@@ -1,11 +1,10 @@
  # Installing and Running iSNPcaller
- 1. Installation
- 
- a. Copy iSNPcaller.pl script into a directory of your choice:
+ ## 1. Installation
+ Copy iSNPcaller.pl script into a directory of your choice:
  ```bash
  cp iSNPcaller.pl iSNPcaller
  ```
- b.Install perl modules in a directory in your current search paths. Find current paths with the following commanns:
+ Install perl modules in a directory in your current search paths. Find current paths with the following commanns:
  ```bash
  perl -e "print join($/,@INC);"
  ```
@@ -24,9 +23,8 @@
  ```
  Repeat steps for all modules.
  
- 2. Running iSNPcaller
-
-a. If this is the first run for a given project, initiate a project as follows:
+ ## 2. Initiating an iSNPcaller project
+If this is the first run for a given project, initiate a project as follows:
 ```bash
 cd iSNPcaller
 perl iSNPcaller.pl
@@ -37,4 +35,24 @@ You will be prompted for the name of a new project (should not match any file/fo
 ```bash
 perl iSNPcaller.pl myProject
 ```
-confirm the project name when prompted.
+confirm the project name when prompted. You will receive instructions to copy genome assemblies into the newly-created project directory. 
+
+## 3. Adding genomes to an iSNPcaller project
+Open a new terminal window and copy genome assemblies into the GENOMES folder in the newly-created project directory:
+```bash
+cp path/to/myGenomesLocation/*fasta myProject/GENOMES
+```
+## 4. Run the project
+Return to the original terminal window, type run and hit return. The run dialog should now appear.
+
+## 5. Adding new genomes to a project
+Copy the new genomes into the myProject/GENOMES directory and run iSNPcaller:
+```bash
+cp path/to/myNewGenomesLocation/*fasta iSNPcaller/GENOMES
+cd iSNPcaller
+perl iSNPcaller.pl myProject run
+```
+cp
+
+
+
