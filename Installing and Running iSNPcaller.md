@@ -52,7 +52,6 @@ cp path/to/myNewGenomesLocation/*fasta iSNPcaller/GENOMES
 cd iSNPcaller
 perl iSNPcaller.pl myProject run
 ```
-cp
 
 
 
