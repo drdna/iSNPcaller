@@ -1,10 +1,10 @@
  # Installing and Running iSNPcaller
  ## 1. Installation
- Copy iSNPcaller.pl script into a directory of your choice:
+ Copy iSNPcaller_MT.pl script into a directory of your choice:
  ```bash
- cp iSNPcaller.pl iSNPcaller
+ cp iSNPcaller_MT.pl iSNPcaller
  ```
- Install perl modules in a directory in your current search paths. Find current paths with the following commanns:
+ Install perl modules in a directory in your current search paths. Find current paths with the following command:
  ```bash
  perl -e "print join($/,@INC);"
  ```
@@ -21,13 +21,13 @@
  ```bash
  chmod a+x PERL_MODULES/Repeatmaskerfast.pm
  ```
- Repeat steps for all modules.
+ Repeat steps for all required modules.
  
  ## 2. Initiating an iSNPcaller project
 If this is the first run for a given project, initiate a project as follows:
 ```bash
 cd iSNPcaller
-perl iSNPcaller.pl
+perl iSNPcaller_MT.pl
 ```
 You will be prompted for the name of a new project (should not match any file/folder in the current working directory). Type the name of the project, hit return and confirm when prompted).
 
@@ -35,7 +35,7 @@ You will be prompted for the name of a new project (should not match any file/fo
 ```bash
 perl iSNPcaller.pl myProject
 ```
-confirm the project name when prompted. You will receive instructions to copy genome assemblies into the newly-created project directory. 
+You will receive instructions to copy genome assemblies into the newly-created project directory. 
 
 ## 3. Adding genomes to an iSNPcaller project
 Open a new terminal window and copy genome assemblies into the GENOMES folder in the newly-created project directory:
@@ -46,11 +46,11 @@ cp path/to/myGenomesLocation/*fasta myProject/GENOMES
 Return to the original terminal window, type run and hit return. The run dialog should now appear.
 
 ## 5. Adding new genomes to a project
-Copy the new genomes into the myProject/GENOMES directory and run iSNPcaller:
+After a run has finished, copy the new genomes into the myProject/GENOMES directory and run iSNPcaller again:
 ```bash
-cp path/to/myNewGenomesLocation/*fasta iSNPcaller/GENOMES
+cp path/to/myNewGenomesLocation/*fasta iSNPcaller/myProject/GENOMES
 cd iSNPcaller
-perl iSNPcaller.pl myProject run
+perl iSNPcaller_MT.pl myProject
 ```
 
 
