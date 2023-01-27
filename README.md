@@ -6,4 +6,4 @@ A package that simplifies the SNP calling process by allowing one to deposit gen
 4. Cryptic repeats are masked.
 5. SNPs are called only in the uniquely-aligned regions of each genome.
 
-As new genomes are generated, they are added to the analysis by simply re-populating the GENOMES directory. 
+As new genomes are generated, they are added to the analysis by simply re-populating the GENOMES directory and typing "run". 
