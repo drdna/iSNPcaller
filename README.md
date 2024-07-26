@@ -40,12 +40,13 @@ perl StrictlyUniqueSNPs.pl BLASTdata SNPdata
 This will create files with an "_out" suffix that house the SNP calls and "SNP_counts_out(date).txt" and SNP_counts_cumulative.txt files that summarize the SNP counts.
 
 9. Create a strain metadata table (tab- or space-delimited) with the format: strainID lineageID 1 (the last column is for use with Chromopainter software).
-10. Generate a haplotypes file using the Generate_haplortpes.pl script:
+10. Generate a haplotypes file using the Generate_haplotypes.pl script:
 Usage: perl Generate_haplotypes.pl <StrainIDList.txt> <SNP directory> <BLAST directory> <Haplotypes outfile> <path/to/masked reference genome> <sequence type - chromosome/contig/sequence>
 ```bash
 perl Generate_haplotypes.pl StrainIDList.txt SNPdata BLASTdata HaplotypesOutfile.txt Masked_ref.fasta contig
 ```
 This will generate two haplotypes outfiles: one that contains haplotype calls for all variant sites (missing data repesented as 9s) and a "complete" file with no "missing" data.
+
 11. Generate FASTA file from the complete Haplotypes data:
 ```bash
 perl Haplotypes2FASTA.pl HaplotypesOutFile.complete.txt
