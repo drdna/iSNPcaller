@@ -29,9 +29,9 @@ mkdir ../BLASTdata
 ```bash
 for f in `ls *nh.fasta`; do blastn -query Masked_ref.fasta -subject $f -evalue 1e-20 -max_target_seqs 20000 -outfmt '6 qseqid sseqid qstart qend sstart send btop' > ../BLASTdata/Masked-ref.${f/_*/}.BLAST; done
 ```
-7. Change directories:
+7. Change up a directory level:
 ```bash
-cd
+cd ..
 ```
 8. Run the SNP caller by pointing to the directory containing the BLAST output files and naming a new directory to receive the SNP calls:
 ```bash
