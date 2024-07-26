@@ -27,7 +27,7 @@ mkdir ../BLASTdata
 ```
 6. BLAST a repeat-masked version of the reference genome against the reformatted genomes:
 ```bash
-for f in `ls *fasta`; do blastn -query Masked_ref.fasta -subject $f -evalue 1e-20 -max_target_seqs 20000 -outfmt '6 qseqid sseqid qstart qend sstart send btop' > ../BLASTdata/Masked-ref.${f/_*/}.BLAST; done
+for f in `ls *nh.fasta`; do blastn -query Masked_ref.fasta -subject $f -evalue 1e-20 -max_target_seqs 20000 -outfmt '6 qseqid sseqid qstart qend sstart send btop' > ../BLASTdata/Masked-ref.${f/_*/}.BLAST; done
 ```
 7. Change directories:
 ```bash
