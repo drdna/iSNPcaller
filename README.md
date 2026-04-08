@@ -27,7 +27,7 @@ mkdir ../BLASTdata
 ```
 6. BLAST a repeat-masked version of the reference genome against the reformatted genomes:
 ```bash
-for f in `ls *nh.fasta`; do blastn -query Masked_ref.fasta -subject $f -evalue 1e-20 -max_target_seqs 20000 -outfmt '6 qseqid sseqid qstart qend sstart send btop' > ../BLASTdata/Masked-ref.${f/_*/}.BLAST; done
+for f in `ls *nh_masked.fasta`; do blastn -query Masked_ref.fasta -subject $f -evalue 1e-20 -max_target_seqs 20000 -outfmt '6 qseqid sseqid qstart qend sstart send btop' > ../BLASTdata/Masked-ref.${f/_*/}.BLAST; done
 ```
 7. Change up a directory level:
 ```bash
@@ -51,4 +51,30 @@ This will generate two haplotypes outfiles: one that contains haplotype calls fo
 ```bash
 perl Haplotypes2FASTA.pl HaplotypesOutFile.complete.txt
 ```
+## Processing Genomes For SNP calling
+### Option 1. Perform read trimming, genome assembly, header standardization, and repeat masking in a single pipeline using the trim-spades.mask.sh script
+1. Run the [trim-spades-mask.sh](/scripts/trim-spades-mask.sh) script:
+```bash
+sbatch trim-spades-mask.sh <path/to/reads/folder> <reads prefix> <trimming? yes/no> # reads prefix is everything before first underscore in fastq filename)
+```
+this will produce original contigs.fasta and scaffold.fasta files, as well as GenomeID_scaffolds_nh.fasta (standardized headers; e.g. GenomeID_contig1); and GenomeID_scaffolds_nh_masked.fasta files (where GenomeID = reads prefix)
+### Option 2. Perform header standardization and repeat masking on already assembled genomes
+1. Download and unpack the [GenomePostProcess.tar.gz](/scripts/GenomePostProcess.tar.gz) tarball:
+```
+tar zxvf GenomePostProcess.tar.gz
+```
+2. Create a directory for genomes to be processed
+```
+mkdir MyGenomes
+```
+3. Copy genomes into MyGenomes directory
+```
+cp path(s)/to/*.fasta MyGenomes
+```
+4. Run GenomePostProcess.pl script on files in the MyGenomes directory:
+```
+perl path/to/GenomePostProcess.pl MyGenomes
+```
+
+
  
