@@ -18,11 +18,11 @@ The iSNPcaller algorithm can also be used for reference-based variant calls as f
 - standardize sequence headers
 - generate repeat-masked genomes
 ```bash
-bash GenomeProcessFull.sh assembly-dir
+bash GenomeProcessFull.pl assembly-dir
 ```
 ## Align masked genomes to reference assembly and call SNPs
 ```bash
-perl AlignAndCallVariants.pl Reference.fasta assembly-dir
+perl AlignAndCallVariants.sh Reference.fasta assembly-dir
 ```
 This will create two directories:
 - assembly-dir_BLAST which houses the genome alignment files
