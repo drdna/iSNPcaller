@@ -37,7 +37,7 @@ for f in "$genomesdir"/*masked.fasta; do
 
 done
 
-perl /project/farman_uksr/SCRIPTs/Run_SU4.pl "$blastdir" "$snpdir"
+perl /project/farman_uksr/SCRIPTs/RunCaller.pl "$blastdir" "$snpdir"
 
 
 
