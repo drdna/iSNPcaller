@@ -1,4 +1,4 @@
-package CallUnique;
+package UniqueVariants;
 
 use strict;
 use warnings;
