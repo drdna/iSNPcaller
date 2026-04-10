@@ -117,10 +117,6 @@ sub ANALYZE_ALIGNMENT {
         $AlignedSegment ++;
         if($Alignment =~ /\d+/) {
             ($qpos, $spos, $MAligned) = COUNT_ALIGNED_MATCHES($qid, $sid, $qpos, $spos, $send, $Alignment, $MAligned);
-            if($AlignedSegment == 1) {
-                $qpos --;
-                if($spos < $send) { $spos -- } else { $spos ++ }
-            }
         }
         if($Alignment =~ /\w+/) {
             ($qpos, $spos, $SNPs, $MMAligned) = ANALYZE_ALIGNED_MISMATCHES($qid, $sid, $qpos, $spos, $send, $Alignment, $SNPs, $MMAligned)
@@ -133,12 +129,16 @@ sub COUNT_ALIGNED_MATCHES {
     my($qid, $sid, $qpos, $spos, $send, $Alignment, $MAligned) = @_;
     my $qnum = ($qid =~ /(\d+)$/) ? $1 : 0;
     my $snum = ($sid =~ /(\d+)$/) ? $1 : 0;
-    for(my $m = 0; $m <= $Alignment - 1; $m ++) {
-        if(($QArray[$qnum][$qpos] == 1) && ($SArray[$snum][$spos] == 1 )) { $MAligned ++; }
-        $qpos ++;
-        if($spos < $send) { $spos ++ } else { $spos -- }
+    for(my $m = 0; $m < $Alignment; $m++) {
+        # Check arrays at CURRENT position
+        if(($QArray[$qnum][$qpos] == 1) && ($SArray[$snum][$spos] == 1)) { 
+            $MAligned++; 
+        }
+        # Increment to the NEXT position
+        $qpos++;
+        $spos < $send ? $spos++ : $spos--;
     }
-    return($qpos, $spos, $MAligned)
+    return($qpos, $spos, $MAligned);
 }
 
 sub ANALYZE_ALIGNED_MISMATCHES {
