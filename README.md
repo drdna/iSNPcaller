@@ -7,7 +7,10 @@ A package that simplifies the SNP calling process by allowing one to deposit gen
 5. SNPs are called only in the uniquely-aligned regions of each genome.
 
 # Dependencies
-Perl Module:
+
+Perl Modules:
+- RM.pm
+- UniqueVariants.pm
 - Parallel:ForkManager - install using conda:
 ```
 conda install -c bioconda perl-parallel-forkmanager
@@ -21,6 +24,8 @@ conda install -c bioconda perl-parallel-forkmanager
 - standardize assembly names
 - standardize sequence headers
 - generate repeat-masked genomes
+
+- 
 ```bash
 perl GenomeProcessFull.pl assembly-dir
 ```
