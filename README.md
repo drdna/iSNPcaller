@@ -9,8 +9,9 @@ A package that simplifies the SNP calling process by allowing one to deposit gen
 --
 # Dependencies
 
-[SPAdes](https://github.com/ablab/spades)
-[Trimmomatic](https://github.com/usadellab/trimmomatic)
+- [SPAdes](https://github.com/ablab/spades)
+
+- [Trimmomatic](https://github.com/usadellab/trimmomatic)
  
 - Parallel:ForkManager
 
@@ -27,6 +28,7 @@ These packages are in the lib directory and are automatically called as long as 
 
 --
 # Align Genomes and Call Variants
+
 ## Preprocess genomes
 1. Place all genomes in a single directory (e.g. assembly-dir)
 2. uncompress them if gzipped:
