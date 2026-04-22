@@ -11,8 +11,10 @@ A package that simplifies the SNP calling process by allowing one to deposit gen
 Perl Modules:
 - RM.pm
 - UniqueVariants.pm
-These pacakges are in the lib directory and are automatically called as long as the lib dorectory is inside teh same directory as the GenomeProcessFull.pl script when it is called. 
+
+These packages are in the lib directory and are automatically called as long as the lib dorectory is inside teh same directory as the GenomeProcessFull.pl script when it is called. 
 - Parallel:ForkManager
+
 Have system admin install as a standard perl module or install using conda:
 ```
 conda install -c bioconda perl-parallel-forkmanager
