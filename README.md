@@ -6,8 +6,6 @@ A package that simplifies the SNP calling process by allowing one to deposit gen
 4. Cryptic repeats uncovered in the pairwise alignment are masked.
 5. SNPs are called only in the uniquely-aligned regions of each genome.
 
---
-
 # Dependencies
 
 - [SPAdes](https://github.com/ablab/spades)
@@ -26,8 +24,6 @@ Perl Modules:
 - UniqueVariants.pm
 
 These packages are in the lib directory and are automatically called as long as the lib directory is inside the same directory as the GenomeProcessFull.pl script when it is called.
-
---
 
 # Align Genomes and Call Variants
 
