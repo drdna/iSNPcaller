@@ -11,7 +11,9 @@ A package that simplifies the SNP calling process by allowing one to deposit gen
 Perl Modules:
 - RM.pm
 - UniqueVariants.pm
-- Parallel:ForkManager - install using conda:
+These pacakges are in the lib directory and are automatically called as long as the lib dorectory is inside teh same directory as the GenomeProcessFull.pl script when it is called. 
+- Parallel:ForkManager
+Have system admin install as a standard perl module or install using conda:
 ```
 conda install -c bioconda perl-parallel-forkmanager
 
@@ -19,20 +21,25 @@ conda install -c bioconda perl-parallel-forkmanager
 
 ## Preprocess genomes
 1. Place all genomes in a single directory (e.g. assembly-dir)
-2. Activate the conda environment containing Parallel::ForkManager
-3. Run the GenomeProcessFull.sh script to:
+2. uncompress them if gzipped:
+```bash
+gunzip assembly-dir/*gz
+```
+4. Activate the conda environment containing Parallel::ForkManager
+5. Run the GenomeProcessFull.pl script to:
 - standardize assembly names
 - standardize sequence headers
 - generate repeat-masked genomes
-
-- 
 ```bash
-perl GenomeProcessFull.pl assembly-dir
+perl path/to/GenomeProcessFull.pl path/to/assembly-dir
 ```
 ## Align masked genomes to reference assembly and call SNPs
 ```bash
-perl AlignAndCallVariants.sh Reference.fasta assembly-dir
+perl AlignAndCallVariants.sh path/to/Reference.fasta path/to/assembly-dir
 ```
 This will create two directories:
 - assembly-dir_BLAST which houses the genome alignment files
 - assembly-dir_SNP which houses the SNP calls and "SNP_counts_out(date).txt" and SNP_counts_cumulative.txt files summarizing SNP counts
+
+Alignment files have the format:
+qseqid sseqid qstart sstart qallele sallele orientation repeated?
