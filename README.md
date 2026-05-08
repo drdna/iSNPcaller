@@ -62,6 +62,7 @@ e.g. ShinyHaplotypes.sh <strain-list> <SNP-dir> <blast-dir> <outfile-prefix> <Re
 ```bash
 bash ShinyHaplotypes.sh MyStrains.txt assembly-dir_SNP assembly-dir_BLAST MyHaplotypes Reference.fasta
 ```
+This will create the following files/directories:
 | File / Directory | Description |
 |---|---|
 | `Myhaplotypes.txt` | Lists genotypes at all sites with bi-allelic SNPs |
