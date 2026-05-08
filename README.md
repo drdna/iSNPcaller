@@ -65,9 +65,9 @@ bash ShinyHaplotypes.sh MyStrains.txt assembly-dir_SNP assembly-dir_BLAST MyHapl
 This will create the following files/directories:
 | File / Directory | Description |
 |---|---|
-| `Myhaplotypes.txt` | Lists genotypes at all sites with bi-allelic SNPs |
+| `MyHaplotypes.txt` | Lists genotypes at all sites with bi-allelic SNPs |
 | `MyHaplotypes.complete.txt` | Lists genotypes at all sites with bi-allelic SNPs that are called in ALL samples |
-| `Myhaplotypes_Shiny/` | Directory containing all-by-all haplotype divergence metrics |
+| `MyHaplotypes_Shiny/` | Directory containing all-by-all haplotype divergence metrics |
 | `MyHaplotypes.complete.dat` | MultiFASTA file containing genotypes of all individuals at all “fully” called sites |
 | `MyHaplotypes.complete.idx` | Index file for fast retrieval of FASTA slices |
 
