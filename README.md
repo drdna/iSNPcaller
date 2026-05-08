@@ -6,7 +6,7 @@ A package that simplifies the SNP calling process by allowing one to deposit gen
 4. Cryptic repeats uncovered in the pairwise alignment are masked.
 5. SNPs are called only in the uniquely-aligned regions of each genome.
 
-# Dependencies
+## Dependencies
 
 - [SPAdes](https://github.com/ablab/spades)
 
@@ -42,8 +42,10 @@ gunzip assembly-dir/*gz
 perl path/to/GenomeProcessFull.pl path/to/assembly-dir
 ```
 ## Align masked genomes to reference assembly and call SNPs
+
+1. Run the AlignAndCallVariants.sh script:
 ```bash
-perl AlignAndCallVariants.sh path/to/Reference.fasta path/to/assembly-dir
+bash AlignAndCallVariants.sh path/to/Reference.fasta path/to/assembly-dir
 ```
 This will create two directories:
 - assembly-dir_BLAST which houses the genome alignment files
@@ -51,3 +53,30 @@ This will create two directories:
 
 Alignment files have the format:
 qseqid sseqid qstart sstart qallele sallele orientation repeated?
+
+# Build haplotypes data structure and ShinyHaplotypes dataset
+1. Create a metadata file with three space-separated columns (StrainID population host). See this example: [MyStrains.txt](/data/MyStrains.txt).
+2. Run the ShinyHaplotypes.sh script:
+   
+e.g. ShinyHaplotypes.sh <strain-list> <SNP-dir> <blast-dir> <outfile-prefix> <Reference.fasta>
+```bash
+bash ShinyHaplotypes.sh MyStrains.txt assembly-dir_SNP assembly-dir_BLAST MyHaplotypes Reference.fasta
+```
+This will create the following files and directories:
+- Myhaplotypes.txt            Lists genotypes at all sites with bi-allelic SNPs
+- MyHaplotypes.complete.txt   Lists genotypes at all sites with bi-allelic SNPs that are called in ALL samples
+- Myhaplotypes_Shiny          Directory containing all-by-all haplotype divergecme metrics
+- MyHaplotypes.complete.dat   MultiFasta file containing genotypes of all individuals at all "fully" called sites       
+- MyHaplotypes.complete.idx   Index file for fast retrieval of fasta slices
+
+# Visualizing haplotype divergence in the Shiny Browser
+
+1. Start the ShinyHaplotypes browser
+2. Select the Shiny data folder
+3. Use radio buttons on the left to select a strain for comparison
+4. Use drop-down menu to choose whether to compare the test strain against select individuals or against all strains within a given lineage
+5. Use radio buttons to choose the comparator strains/lineages
+6. Select sequence to view
+7. Use sliders to zoom in on a specific chromosome region and expand/contract the y-axis
+8. Drag a square across a region of the plot and select an analysis to run on that region
+9. Use the export button to download plots/datasets
