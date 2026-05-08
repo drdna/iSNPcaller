@@ -68,7 +68,7 @@ This will create the following files/directories:
 | `MyHaplotypes.txt` | Lists genotypes at all sites with bi-allelic SNPs |
 | `MyHaplotypes.complete.txt` | Lists genotypes at all sites with bi-allelic SNPs that are called in ALL samples |
 | `MyHaplotypes_Shiny/` | Directory containing all-by-all haplotype divergence metrics |
-| `MyHaplotypes.complete.dat` | MultiFASTA file containing genotypes of all individuals at all “fully” called sites |
+| `MyHaplotypes.complete.dat` | Lookup file containing genotypes of all individuals at all “fully” called sites |
 | `MyHaplotypes.complete.idx` | Index file for fast retrieval of FASTA slices |
 
 # Visualizing haplotype divergence in the Shiny Browser
