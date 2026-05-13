@@ -73,12 +73,13 @@ This will create the following files/directories:
 
 # Visualizing haplotype divergence in the Shiny Browser
 
-1. Start the ShinyHaplotypes browser
+1. Open the ShinyHaplotypes.R script in RStudio
 2. Edit the script to modify the path to the newly-created Shiny data folder and save it
-3. Use radio buttons on the left to select a strain for comparison
-4. Use drop-down menu to choose whether to compare the test strain against select individuals or against all strains within a given lineage
-5. Use radio buttons to choose the comparator strains/lineages
-6. Select sequence to view
-7. Use sliders to zoom in on a specific chromosome region and expand/contract the y-axis
-8. Drag a square across a region of the plot and select an analysis to run on that region
-9. Use the export button to download plots/datasets
+3. Start the ShinyHaplotypes browser
+4. Use radio buttons on the left to select a strain for comparison
+5. Use drop-down menu to choose whether to compare the test strain against select individuals or against all strains within a given lineage
+6. Use radio buttons to choose the comparator strains/lineages
+7. Select sequence to view
+8. Use sliders to zoom in on a specific chromosome region and expand/contract the y-axis
+9. Drag a square across a region of the plot and select an analysis to run on that region
+10. Use the export button to download plots/datasets
