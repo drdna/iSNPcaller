@@ -74,7 +74,7 @@ This will create the following files/directories:
 # Visualizing haplotype divergence in the Shiny Browser
 
 1. Start the ShinyHaplotypes browser
-2. Select the Shiny data folder
+2. Edit the script to modify the path to the newly-created Shiny data folder and save it
 3. Use radio buttons on the left to select a strain for comparison
 4. Use drop-down menu to choose whether to compare the test strain against select individuals or against all strains within a given lineage
 5. Use radio buttons to choose the comparator strains/lineages
