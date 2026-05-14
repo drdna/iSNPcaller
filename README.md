@@ -73,7 +73,7 @@ This will create the following files/directories:
 
 # Visualizing haplotype divergence in the Shiny Browser
 
-1. Open the ShinyHaplotypes.R script in RStudio
+1. Open the ShinyBrowser.R script in RStudio
 2. Edit the script to modify the path to the newly-created Shiny data folder and save it
 3. Start the ShinyHaplotypes browser
 4. Use radio buttons on the left to select a strain for comparison
